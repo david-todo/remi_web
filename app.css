@@ -1,0 +1,235 @@
+
+p {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+md-card {
+    padding: 10px 10px 10px 10px;
+    margin: 0,0,0,0;
+}
+
+a {
+    color: white;
+    fill: white;
+    text-decoration: none;
+}
+
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-has-value label, md-input-container:not(.md-input-invalid).md-input-has-value label {
+  color:black;
+  font-size:18;
+}
+
+.dialog-title {
+  background-color: #3F51B5;
+  color:white;
+  font-weight:bold;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 18;
+  padding-top:10px;
+  padding-left:15px;
+  padding-bottom:10px;
+}
+.item-dialog {
+  min-width:400px;
+  padding-top: 25px;
+  padding-left:10px;
+  padding-right:10px;
+  padding-bottom:10px;
+}
+.time-row-label{
+  margin-left:20px;
+}
+.time-row-adjust-margin {
+  margin-top:5px;
+}
+.time-row {
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:1px;
+}
+.save-list-btn {
+  padding-top:15px;
+  padding-left:15px;
+}
+.sidenav {
+  height: -webkit-calc(100% - 65px);
+}
+.list-head {
+  min-height:400px;
+
+}
+.main-background {
+  background-color:rgb(230,230,230);
+}
+.list-name {
+  margin-top:23px;
+}
+
+.alarm-select {
+  margin-top:0;
+  margin-bottom:5px;
+  padding-top:0;
+  margin-left:10px;
+}
+.myGrid {
+    height:30px !important;
+    width:660px;
+}
+
+.nav-active {
+    background-color: rgb(89, 200, 215);
+}
+
+.list-name {
+    margin-bottom: 0;
+}
+
+.active-day-label {
+   margin-top:10px;
+   margin-bottom:15px;
+}
+.menuitem {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    fill: white;
+}
+
+.menuitem:hover {
+    background-color: rgb(15, 180, 207)
+
+}
+
+.tablelist {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+}
+
+md-item-content:focus {
+    outline: none;
+    border: 0;
+}
+
+.logo {
+    border-radius: 0 0 0 0;
+    padding-left: 25px;
+    padding-top: 10px;
+}
+
+.divider {
+    height: 1px;
+    background-color: rgb(75, 150, 150);
+}
+
+md-sidenav, md-sidenav.md-locked-open-add-active, md-sidenav.md-closed.md-locked-open-add-active, md-sidenav.md-locked-open {
+    width: 210px;
+    min-width: 210px;
+    max-width: 210px;
+}
+
+/* ANIMATIONS */
+
+
+/* main ng-view animations */
+
+.my-slide-animation.ng-enter, .my-slide-animation.ng-leave {
+    -webkit-transition: all 0.7s ease-in;
+    -transition: all 0.7s ease-in;
+    -o-transition: all 0.7s ease-in;
+    -moz-transition: all 0.7s ease-in;
+    position: absolute;
+    top: 600;
+    left: 210;
+}
+
+.my-slide-animation.ng-enter {
+    z-index: 100;
+    opacity: 0;
+}
+
+.my-slide-animation.ng-enter.ng-enter-active {
+    top: 66;
+    opacity: 1;
+}
+
+.my-slide-animation.ng-leave {
+    z-index: 101;
+    top: 65;
+    opacity: 1;
+}
+
+.my-slide-animation.ng-leave.ng-leave-active {
+    top: 600;
+    opacity: 0;
+}
+
+
+/* ng-include animations */
+
+.user-content-area.ng-enter, .user-content-area.ng-leave{
+    transition: all 600ms ease-in;
+    -webkit-transition: all 600ms ease-in;
+    -o-transition: all 600ms linear ease-in;
+    -moz-transition: all 600ms linear ease-in;
+    position: absolute;
+}
+
+.user-content-area.ng-enter {
+    opacity: 0;
+    z-index: 200;
+    left: 1300;
+}
+
+.user-content-area.ng-enter.ng-enter-active {
+    opacity: 1;
+    left: 400;
+}
+
+.user-content-area.ng-leave {
+    z-index: 201;
+    opacity: 1;
+    left:400;
+}
+
+.user-content-area.ng-leave.ng-leave-active {
+    left: 400;
+    opacity: 0;
+}
+
+/* list include animations */
+.list-content-area.ng-enter {
+    transition: all 500ms ease-in;
+    -webkit-transition: all 500ms ease-in;
+    -o-transition: all 500ms linear ease-in;
+    -moz-transition: all 500ms linear ease-in;
+    position: absolute;
+}
+
+.list-content-area.ng-enter {
+    opacity: 0;
+    z-index: 200;
+    left: 1100;
+    height: -webkit-calc(100%);
+}
+
+.list-content-area.ng-enter.ng-enter-active {
+    opacity: 1;
+    left: 400;
+    height: -webkit-calc(100%);
+}
+
+.list-content-area.ng-leave {
+    z-index: 201;
+    opacity: 1;
+    left:400;
+    height: -webkit-calc(100%);
+}
+
+.list-content-area.ng-leave.ng-leave-active {
+    left: 400;
+    opacity: 0;
+    height: -webkit-calc(100%);
+}

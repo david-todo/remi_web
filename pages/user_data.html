@@ -1,0 +1,29 @@
+<!doctype html>
+
+<md-card md-whiteframe="5">
+  <md-input-container class="md-block">
+      <label>User ID</label>
+      <input ng-model="activeUser.user_id" type="text" required>
+  </md-input-container>
+  <md-input-container class="md-block">
+      <label>First Name</label>
+      <input ng-model="activeUser.first_name" type="text" required>
+  </md-input-container>
+  <md-input-container class="md-block">
+      <label>Last Name</label>
+      <input ng-model="activeUser.last_name" type="text" required>
+  </md-input-container>
+  <md-input-container class="md-block">
+      <label>Nickname</label>
+      <input ng-model="activeUser.nickname" type="text">
+  </md-input-container>
+  <md-input-container class="md-block">
+      <label>Email</label>
+      <input ng-model="activeUser.email" type="text">
+  </md-input-container>
+  <md-input-container class="md-block">
+      <label>Role</label>
+      <input ng-model="activeUser.user_role_role_id" type="text" required>
+  </md-input-container>
+  <md-button class="md-raised md-primary" ng-click="saveUser(activeUser)">Save Changes</md-button>
+</md-card>

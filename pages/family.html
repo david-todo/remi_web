@@ -1,0 +1,25 @@
+<!doctype html>
+<div layout="row">
+
+    <div layout="column">
+        <md-card md-whiteframe="5">
+            <h2>Family Settings</h2>
+            <md-input-container class="md-block">
+                <label>Family Name</label>
+                <input type="text" required>
+            </md-input-container>
+        </md-card>
+        <md-card md-whiteframe="5">
+            <md-list>
+                <md-list-item ng-repeat="user in users" md-ink-ripple
+                ng-click="updateUser(user)" aria-label="User">
+                    <a>
+                        <div ng-bind="user.nickname" class="tablelist"></div>
+                    </a>
+                </md-list-item>
+            </md-list>
+
+        </md-card>
+    </div>
+        <ng-include class="user-content-area" src="userPageSource"></ng-include>
+</div>

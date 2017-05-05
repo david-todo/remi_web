@@ -1,0 +1,74 @@
+<!doctype hmtl>
+<html lang="en">
+
+<head>
+    <base href="http://localhost:8080/webapp/" />
+    <title>Remi Family Reminder</title>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+</head>
+
+<body ng-app="StarterApp" ng-controller="AppCtrl">
+    <div layout="column">
+
+        <md-toolbar layout="row">
+            <div class="logo" ng-style="sidenavStyle" style="min-width:210px">
+                <img src="images/RemiLogoSmall.png" />
+            </div>
+            <md-toolbar ng-style="toolbarStyle" md-whiteframe="1">
+                <p>{{toolbarText}}</p>
+            </md-toolbar>
+        </md-toolbar>
+    </div>
+    <div class="divider" style="max-width:210px">
+    </div>
+    <div layout="row" class="main-background">
+        <div layout="column">
+            <md-sidenav ng-style="sidenavStyle" class="sidenav" md-is-locked-open="true">
+                <md-list>
+                    <md-list-item ng-href="{{item.link}}" ng-click="navigateTo(item,$event)" ng-repeat="item in menu" ng-class="{'nav-active': item == activeItem }" class="menuitem">
+                        <a style="fill:white;text-decoration:none;color:white" >
+                            <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                                <div class="inset">
+                                    <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+                                </div>
+                                <div class="inset">{{item.title}}
+                                </div>
+                            </md-item-content>
+                        </a>
+                    </md-list-item>
+                </md-list>
+            </md-sidenav>
+        </div>
+
+        <!--Main Content and Injected Views -->
+        <div class="main">
+            <div ng-view class="my-slide-animation">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Angular Material Dependencies -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-material-icons/angular-material-icons.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+
+    <!--UI Bootstrap Dependencies -->
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+    <!--angular ui grid -->
+    <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+
+    <!--Internal javascript file dependencies -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>

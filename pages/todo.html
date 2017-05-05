@@ -1,0 +1,21 @@
+<!doctype html>
+<div layout="row">
+    <div layout="column">
+        <md-card md-whiteframe="5">
+            <h2>Lists</h2>
+            <md-list>
+               <md-list-item ng-repeat="list in listHeadSum" ng-click="updateList(list)" aria-label="list item">
+                 <a>
+                   <div ng-bind="list.listname" class="tablelist" md-ink-ripple>
+                   </div>
+                 </a>
+               </md-list-item>
+
+            </md-list>
+
+            <md-button class="md-raised md-primary" aria-label="New List" ng-click="newList($event)">New List</md-button>
+
+        </md-card>
+    </div>
+        <ng-include class="list-content-area" src="listPageSource"></ng-include>
+</div>

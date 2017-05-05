@@ -1,0 +1,45 @@
+<!doctype html>
+    <md-card id="item-dia-parent" md-whiteframe="5" class="list-head" style="height: -webkit-calc(100% - 87px)">
+        <div layout="row">
+            <div flex="80">
+                <md-input-container class="md-block list-name list-name">
+                    <label>List Name</label>
+                    <input ng-model="activeList.listname" type="text" required>
+                </md-input-container>
+            </div>
+            <div flex="20" class="save-list-btn">
+                <md-button class="md-raised md-primary" aria-label="Save" ng-click="saveList(activeList)">Save List</md-button>
+
+            </div>
+        </div>
+        <div layout="row">
+            <label class="time-row-adjust-margin">Start Time</label>
+            <p class="time-row time-row-adjust-margin" ng-model="startTime">{{startTime}}</p>
+            <label class="time-row-label time-row-adjust-margin">Deadline</label>
+            <p class="time-row time-row-adjust-margin" ng-model="deadlineTime">{{deadlineTime}} </p>
+            <label class="time-row-adjust-margin time-row-label">Alarm Type</label>
+            <md-select class="alarm-select" ng-model="selectedAlarm" placeholder="Select Alarm Type" ng-model-options="{trackBy: '$value.id'}">
+                <md-option ng-value="alarm" ng-repeat="alarm in alarmTypes">{{alarm.desc}}</md-option>
+            </md-select>
+        </div>
+
+        <label class="active-day-label">List Active on Days Selected Below</label>
+
+        <div layout="row">
+            <md-checkbox ng-model="activeList.due_sun" ng-click="changeCheckVal('sun')" ng-checked="sunIsChecked" aria-label="Due Sunday">Su</md-checkbox>
+            <md-checkbox ng-model="activeList.due_mon" ng-click="changeCheckVal('mon')" ng-checked="monIsChecked" aria-label="Due Monday">M</md-checkbox>
+            <md-checkbox ng-model="activeList.due_tue" ng-click="changeCheckVal('tue')" ng-checked="tueIsChecked" aria-label="Due Tuesday">Tu</md-checkbox>
+            <md-checkbox ng-model="activeList.due_wed" ng-click="changeCheckVal('wed')" ng-checked="wedIsChecked" aria-label="Due Wednesday">W</md-checkbox>
+            <md-checkbox ng-model="activeList.due_thu" ng-click="changeCheckVal('thu')" ng-checked="thuIsChecked" aria-label="Due Thursday">Th</md-checkbox>
+            <md-checkbox ng-model="activeList.due_fri" ng-click="changeCheckVal('fri')" ng-checked="friIsChecked" aria-label="Due Friday">F</md-checkbox>
+            <md-checkbox ng-model="activeList.due_sat" ng-click="changeCheckVal('sat')" ng-checked="satIsChecked" aria-label="Due Saturday">Sa</md-checkbox>
+        </div>
+        <div class="divider"></div>
+        <div layout="row">
+            <md-button class="md-raised" ng-click="newItem($event)" aria-label="New Item">New Item</md-button>
+            <md-button class="md-raised" ng-click="deleteItem($event)" aria-label="New Item">Delete Item</md-button>
+            <md-button class="md-raised" ng-click="editItem($event)" aria-label="New Item">Edit Item</md-button>
+        </div>
+        <div ui-grid="gridOptions" ui-grid-selection class="myGrid">
+        </div>
+</md-card>

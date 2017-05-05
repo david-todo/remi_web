@@ -1,0 +1,35 @@
+<!doctype hmtl>
+
+<md-dialog aria-label="List Header Dialog">
+    <span class="dialog-title">Add New List</span>
+    <md-dialog-content class="item-dialog">
+        <div layout="column">
+            <md-input-container>
+                <label>List Name</label>
+                <input type="text" ng-model="listname" />
+            </md-input-container>
+            <label>Start Time</label>
+            <div uib-timepicker ng-model="startTime" minute-step="mstep"></div>
+            <label>Deadline</label>
+            <div uib-timepicker ng-model="deadline" minute-step="mstep"></div>
+            <label>Alarm Type</label>
+            <md-select ng-model="selectedAlarm" placeholder="Select Alarm Type" ng-model-options="{trackBy: '$value.id'}">
+                <md-option ng-value="alarm" ng-repeat="alarm in alarmTypes">{{alarm.desc}}</md-option>
+            </md-select>
+            <label>List Active on Selected Days</label>
+            <div layout="row">
+                <md-checkbox ng-model="due_sun">Su</md-checkbox>
+                <md-checkbox ng-model="due_mon">M</md-checkbox>
+                <md-checkbox ng-model="due_tue">Tu</md-checkbox>
+                <md-checkbox ng-model="due_wed">W</md-checkbox>
+                <md-checkbox ng-model="due_thu">Th</md-checkbox>
+                <md-checkbox ng-model="due_fri">F</md-checkbox>
+                <md-checkbox ng-model="due_sat">Sa</md-checkbox>
+            </div>
+        </div>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="closeDialog()" class="md-secondary md-raised">Cancel</md-button>
+        <md-button ng-click="saveNewList()" class="md-primary md-raised">Save List</md-button>
+    </md-dialog-actions>
+</md-dialog>
